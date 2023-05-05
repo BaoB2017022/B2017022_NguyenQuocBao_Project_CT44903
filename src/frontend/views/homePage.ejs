@@ -1,0 +1,97 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Application Development Project</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+    
+    <div class="topnav">
+        <a class="active" href="#home">Home</a>
+        <!-- <a href="#news" class="active">News</a>
+        <a href="#contact" class="active">Contact</a>
+        <a href="#about" class="active">About</a> -->
+    </div>
+      
+    <div>
+        <div class="w3-container">
+            <h2>List Table</h2>
+          
+            <table class="w3-table-all w3-hoverable">
+                <thead>
+                    <tr class="w3-light-grey">
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Importance</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Location</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <% for(let i=0; i < dataUser.length; i++) { %>
+                        <tr>
+                            <td><%= dataUser[i].id %></td>
+                            <td><%= dataUser[i].title %></td>
+                            <td><%= dataUser[i].importance %></td>
+                            <td><%= dataUser[i].date %></td>
+                            <td><%= dataUser[i].time %></td>
+                            <td><%= dataUser[i].location %></td>
+                            <td>
+                                <form>
+                                    <a href="/detail/user/<%= dataUser[i].id %>" target="_blank">Detail</a>
+                                </form>
+                                
+                                <form action="/edit-user/<%= dataUser[i].id %>" method="GET">
+                                    <button type="submit">Edit</button>
+                                </form>
+                                    
+                                <form action="/delete-user" method="POST">
+                                    <input type="text", hidden value="<%= dataUser[i].id %>" name="userID" />
+                                    <button type="submit">Delete</button>
+                                </form>
+                                
+                            </td>
+                        </tr>
+                     <% } %>
+                </tbody>
+                
+            </table>
+        </div>
+        <div class="create-user-container">
+            <form action="/create-new-user" method="POST">
+                <div><b>Create a new note</b></div>
+                <div>
+                    <label>Title</label>
+                    <input type="text" name="title"/>
+                </div>
+                <div>
+                    <label>Importance</label>
+                    <input type="text" name="importance"/>
+                </div>
+                <div>
+                    <label>Date</label>
+                    <input type="date" name="date"/>
+                </div>
+                <div>
+                    <label>Time</label>
+                    <input type="time" name="time"/>
+                </div>
+                <div>
+                    <label>Location</label>
+                    <input type="text" name="location"/>
+                </div>
+                <div>
+                    <button type="submit" class="btn-submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
