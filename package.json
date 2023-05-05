@@ -1,0 +1,23 @@
+{
+  "name": "b2017022_nguyenquocbao_project_ct44903",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BaoB2017022/B2017022_NguyenQuocBao_Project_CT44903.git"
+  },
+  "author": "Nguyen Quoc Bao B2017022",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BaoB2017022/B2017022_NguyenQuocBao_Project_CT44903/issues"
+  },
+  "homepage": "https://github.com/BaoB2017022/B2017022_NguyenQuocBao_Project_CT44903#readme",
+  "dependencies": {
+    "express": "4.17.1"
+  }
+}
